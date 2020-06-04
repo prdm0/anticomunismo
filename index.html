@@ -1,3 +1,61 @@
 <html>
-	<meta http-equiv="refresh" content="1; URL='https://felipealencar.github.io/antifascismo/gerador-bandeira'"/>
+	<head>
+		<title>Gerador de Bandeira Anticomunista</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="HandheldFriendly" content="true">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="felipealencar.net">
+		<meta name="twitter:title" content="Gerador de Bandeira Anticomunista">
+		<meta name="twitter:description" content="Geração de uma bandeira anticomunista customizada.">
+		<meta name="twitter:creator" content="@Pedro_Rafael1">
+		<meta name="twitter:image" content="https://1.bp.blogspot.com/-E7Mk8mOP3Bw/XtTHqyP5DeI/AAAAAAACbbc/N8RcswipTuw0UEVP9wK_EfeiXNinVHuwACK4BGAsYHg/s320/vinho.png" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+		<link href="css/estilo.css" rel="stylesheet">
+		<link href="css/range.css" rel="stylesheet">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box">
+				<form>
+					<legend>
+						<b>GERADOR DE BANDEIRA ANTICOMUNISTA</b>
+						<br>
+						<sup><i>(Ao terminar, pressione na imagem para salvá-la)</i></sup>
+					</legend>
+					<label id="label-nome" for="nome">Nome</label><input type="text" id="nome" placeholder="Digite...">
+					<label id="label-plural" for="p">Plural</label><input type="checkbox" id="p" value="S">
+				
+					<label for="rHue">Cor</label><input type="range" id="rHue" max="359" value="0">
+					<label for="rSat">Saturação</label><input type="range" id="rSat" value="100">
+					<label for="rL">Luminosidade</label><input type="range" id="rL" max="200" value="30"></label>
+				</form>
+				<canvas id="c" width="100%" height="100%"></canvas>
+				<div id="toggle">
+				</div>
+				<a id="link"></a>
+			</div>
+			<div class="footer">
+				<sup>
+				</br>
+				<b> Alteração do projeto para outros gostos, afinal, democracia é isso ...</b> </br>
+				Alterações realizadas por Pedro Rafael D. Marinho</br>
+				Projeto original <a href="https://github.com/felipealencar/antifascismo"> Aqui </a> </a><br><br>
+					Copyright 2020 | Este serviço é licenciado sob a <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License 2.0 (licença original mantida). </a>
+				</sup>
+			</div>
+		</div>
+
+
+	</body>
+	<script>
+		var ctx = c.getContext("2d");
+		var bandeiraCustomizada = new Image();
+		bandeiraCustomizada.onload = demo;
+		bandeiraCustomizada.src = "bandeira.png";
+		p.oninput = nome.oninput = rHue.oninput = rSat.oninput = rL.oninput = render;
+	</script>
 </html>
+
