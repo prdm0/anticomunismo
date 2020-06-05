@@ -1,4 +1,20 @@
-function drawTextAlongArc(context, str, centerX, centerY, radius, angle){
+function drawTextAlongArc1(context, str, centerX, centerY, radius, angle){
+		context.save();
+		context.translate(centerX, centerY);
+		context.rotate(-1 * angle / 2);
+		context.rotate(-1 * (angle / str.length) / 2);
+		for (var n = 0; n < str.length; n++) {
+			context.rotate(angle / str.length);
+			context.save();
+			context.translate(0, -1 * radius);
+			var char = str[n];
+			context.fillText(char, 0, 0);
+			context.restore();
+		}
+		context.restore();
+}
+
+function drawTextAlongArc2(context, str, centerX, centerY, radius, angle){
 		context.save();
 		context.translate(centerX, centerY);
 		context.rotate(-1 * angle / 2);
@@ -55,17 +71,28 @@ function render() {
 
 	var centerX = (c.width / 2)-0;
 	var centerY = c.height - 260;
-	var angle = Math.PI * -0.55; // radians
 	var radius = -225;
 
-	drawTextAlongArc(ctx, "ANTICOMUNISTA"+((p.checked) ? 'S' : ''), centerX, centerY, radius, angle);
+	//drawTextAlongArc(ctx, "ANTICOMUNISTA"+((p.checked) ? 'S' : ''), centerX, centerY, radius, angle);
 
+  upperNome = nome1.value.toUpperCase();
 	var centerX = (c.width / 2)-0;
 	var centerY = c.height - 245;
-	upperNome = nome.value.toUpperCase();
 	var angle = upperNome.length/7; // radians
 	var radius = 185;
-	drawTextAlongArc(ctx, upperNome, centerX, centerY, radius, angle);
+	
+	drawTextAlongArc1(ctx, upperNome, centerX, centerY, radius, angle);
+	
+	
+  downNome = nome2.value.toUpperCase();
+  var dcenterX = (c.width / 2)-0;
+	var dcenterY = c.height - 260;
+	var dangle = Math.PI * -0.55; // radians
+	var dradius = -225;
+	
+	drawTextAlongArc2(ctx, downNome, dcenterX, dcenterY, dradius, dangle);
+	
+	
 	dataUrl = c.toDataURL();
 
 
