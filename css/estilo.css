@@ -36,7 +36,7 @@ input[type="checkbox"] {
 
 .item {
 	margin: 5px;
-	background: tomato;
+	background: rgba(100, 100, 100, 0.5);
 	text-align: center;
 	font-size: 1.5em;
 }
@@ -73,10 +73,10 @@ label, legend {
 form {
 	position : relative;
 	display: grid;
-	width  : 90%;
+	width  : 93.6%;
 	margin : 0 auto;
 	padding: 1em;
-	background : #FFF;
+	background : #e6ecff;
 
 	/* we create our grid */
 	display  : grid;
